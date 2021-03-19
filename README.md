@@ -28,6 +28,7 @@ SERVICE_PORT = DEFAULT_JSONRPC_PORT
 class Gateway(Registry(name=SERVICE_NAME, roptions={'port': SERVICE_PORT})):
     name = SERVICE_NAME
 
+    # https://github.com/Yelp/py_zipkin/blob/master/py_zipkin/zipkin.py#L24
     zipkin = ZipkinHelper(port=SERVICE_PORT)
 
     @app.api('/api/user/token/', methods=['GET'])
@@ -57,7 +58,8 @@ SERVICE_PORT = DEFAULT_JSONRPC_PORT
 
 class Admin(Registry(name=SERVICE_NAME, roptions={'port': SERVICE_PORT})):
     name = SERVICE_NAME
-
+    
+    # https://github.com/Yelp/py_zipkin/blob/master/py_zipkin/zipkin.py#L24
     zipkin = ZipkinHelper(port=SERVICE_PORT)
 
     @jsonrpc.rpc()
@@ -87,7 +89,8 @@ SERVICE_PORT = DEFAULT_JSONRPC_PORT
 
 class User(Registry(name=SERVICE_NAME, roptions={'port': SERVICE_PORT})):
     name = SERVICE_NAME
-
+    
+    # https://github.com/Yelp/py_zipkin/blob/master/py_zipkin/zipkin.py#L24
     zipkin = ZipkinHelper(port=SERVICE_PORT)
 
     @jsonrpc.rpc()
@@ -117,6 +120,7 @@ SERVICE_PORT = DEFAULT_JSONRPC_PORT
 class Ad(Registry(name=SERVICE_NAME, roptions={'port': SERVICE_PORT})):
     name = SERVICE_NAME
 
+    # https://github.com/Yelp/py_zipkin/blob/master/py_zipkin/zipkin.py#L24
     zipkin = ZipkinHelper(port=SERVICE_PORT)
 
     @jsonrpc.rpc()
